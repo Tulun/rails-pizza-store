@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20160201041115) do
   end
 
   create_table "toppings", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "toppings_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "topping_id"
     t.string   "name"
   end
 
