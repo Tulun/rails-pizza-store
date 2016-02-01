@@ -1,0 +1,1 @@
+Simple rails app with a pizza store.
