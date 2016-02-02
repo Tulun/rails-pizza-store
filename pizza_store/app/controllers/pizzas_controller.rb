@@ -12,6 +12,10 @@ class PizzasController < ApplicationController
     @pizza = Pizza.new
   end
 
+  def edit
+    @pizza = Pizza.find(params[:id])
+  end
+
   def create
     @pizza = Pizza.new(pizza_params)
 
@@ -19,6 +23,15 @@ class PizzasController < ApplicationController
       redirect_to action: 'index', notice: "#{@pizza.name} was submitted successfully!"
     else
       render :new
+    end
+  end
+
+  def update
+    @pizza = Pizza.find(params[:id])
+    if @Pizza.update_attributes(pizza_params)
+      redirect_to pizza_path(@pizza)
+    else
+      render :edit
     end
   end
 
