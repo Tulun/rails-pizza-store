@@ -24,7 +24,12 @@
   </div>
   <div>
     <%= f.label :toppings %><br>
-   <h5> <%= f.text_area(:toppings, options = {cols: 20, rows: 20}) %> </h5>
+     <h5>
+        <%= f.collection_check_boxes(:toppings, Topping.all, :uuid, :name) do |b| %>
+          <%= b.check_box %>
+          <%= b.label %>
+        <% end %>
+    </h5>
   </div>
   <div>
     <%= f.submit "Submit" %> 

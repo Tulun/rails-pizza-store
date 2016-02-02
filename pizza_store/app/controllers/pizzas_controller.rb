@@ -2,6 +2,7 @@ class PizzasController < ApplicationController
 
   def index
     @pizzas = Pizza.all
+    @toppings = Topping.all
   end
 
   def show
@@ -10,6 +11,7 @@ class PizzasController < ApplicationController
 
   def new
     @pizza = Pizza.new
+    @toppings = Topping.all
   end
 
   def edit
