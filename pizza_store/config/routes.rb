@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  resources :pizza
-  resources :topping
+  resources :pizzas
+  resources :toppings
   root 'welcome#index'
 end

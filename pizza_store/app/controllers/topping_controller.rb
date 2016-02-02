@@ -1,2 +1,0 @@
-class ToppingController < ApplicationController
-end
