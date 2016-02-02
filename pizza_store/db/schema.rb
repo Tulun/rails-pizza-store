@@ -14,17 +14,18 @@
 ActiveRecord::Schema.define(version: 20160201041115) do
 
   create_table "pizzas", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "pizza_id"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "uuid"
     t.string   "name"
     t.float    "price"
+    t.text     "toppings",   default: "--- []\n"
   end
 
   create_table "toppings", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "topping_id"
+    t.string   "uuid"
     t.string   "name"
   end
 

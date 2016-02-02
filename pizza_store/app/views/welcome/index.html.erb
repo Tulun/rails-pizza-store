@@ -1,12 +1,10 @@
-<%= render 'layouts/navigation_bar' %>
+<%= render 'navigation_bar' %>
 <div class='container-fluid' id='welcome-container'>
   <h1>Welcome to the Ultra-Mega Pizza!</h1>
 
   <%= image_tag('pizza_image.jpg', size: "800x400") %>
   <div>
-    <p>This is the main page of the app.</p>
-    <p> <%= link_to "Pizza", controller: 'pizza', action: 'index' %> </p>
-    <p> <%= link_to "Toppings", controller: 'topping', action: 'index' %> </p>
+    <p>Please follow the links in the navigation bar to see what pizza and toppings we have at our world class pizza joint!.</p>
   </div>
 </div>
 

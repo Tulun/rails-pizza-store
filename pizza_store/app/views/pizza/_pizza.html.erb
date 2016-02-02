@@ -1,0 +1,12 @@
+
+<h1> List of Pizzas! </h1>
+<hr>
+<% @pizzas.each do |pizza| %>
+  <h2><%= link_to pizza.name, pizza_path(pizza) %></h2>
+  <h4>UUID: <%= pizza.uuid %> </h4>
+  <hr>
+<% end %>
+
+<% if @pizzas.empty? %>
+  <%= p "Your search returned no entries." %>
+<% end %>
