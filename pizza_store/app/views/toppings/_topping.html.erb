@@ -1,0 +1,8 @@
+
+<h1> List of Toppingss! </h1>
+<hr>
+<% @toppings.each do |topping| %>
+  <h2><%= link_to topping.name, topping_path(topping) %></h2>
+  <h4>UUID: <%= topping.uuid %> </h4>
+  <hr>
+<% end %>

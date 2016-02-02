@@ -1,0 +1,23 @@
+<%= form_for @topping, url: toppings_path, method: :post do |f| %>
+  <% if @topping.errors.any? %>
+    <div>
+      <%= pluralize(@movie.errors.count, "error") %> prevented this topping from being submitted:
+      <ul>
+        <% @topping.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+  <div>
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.submit "Submit" %> 
+  </div>
+<% end %>
