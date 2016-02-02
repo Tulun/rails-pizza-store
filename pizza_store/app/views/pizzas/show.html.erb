@@ -1,14 +1,18 @@
-<%= link_to "Back to all pizzas", controller: 'pizzas', action: 'index' %><br/>
+<%= render 'layouts/navigation_bar' %>
+<div class='container-fluid'>
 
-(<%= link_to "edit", edit_pizza_path(@pizza) %>, <%= link_to "delete", pizza_path(@pizza), method: :delete, confirm: "You sure?" %>)
 
-<h1>Name: <%= @pizza.name %></h1>
-<h2>Price: <%= @pizza.price %> </h2> 
-<h3>UUID: <%= @pizza.uuid %></h3>
-<h3>Toppings:
-  <% if @pizza.toppings.empty? %>
-    No Toppings.
-  <% else %>
-    <%= @pizza.toppings %>
-  <% end %>
-</h3>
+  <h1>Name: <%= @pizza.name %></h1>
+  <h2>Price: <%= @pizza.price %> </h2> 
+  <h3>UUID: <%= @pizza.uuid %></h3>
+  <h3>Toppings:
+    <% if @pizza.toppings.empty? %>
+      No Toppings.
+    <% else %>
+      <%= @pizza.toppings %>
+    <% end %>
+  </h3>
+  <%= link_to "Back to all pizzas", controller: 'pizzas', action: 'index' %><br/>
+
+  (<%= link_to "edit", edit_pizza_path(@pizza) %>, <%= link_to "delete", pizza_path(@pizza), method: :delete, confirm: "You sure?" %>)
+</div>

@@ -1,7 +1,8 @@
+<h3>
 <%= form_for @pizza, url: pizzas_path, method: :post do |f| %>
   <% if @pizza.errors.any? %>
     <div>
-      <%= pluralize(@movie.errors.count, "error") %> prevented this pizza from being submitted:
+      <%= pluralize(@pizza.errors.count, "error") %> prevented this pizza from being submitted:
       <ul>
         <% @pizza.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
@@ -11,21 +12,22 @@
 <% end %>
   <div>
     <%= f.label :uuid %><br>
-    <%= f.text_field :uuid %>
+   <h5> <%= f.text_field :uuid %> </h5> 
   </div>
   <div>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+   <h5> <%= f.text_field :name %> </h5>
   </div>
   <div>
     <%= f.label :price %><br>
-    <%= f.number_field :price, :step => '0.01' %>
+   <h5> <%= f.number_field :price, :step => '0.01' %> </h5>
   </div>
   <div>
     <%= f.label :toppings %><br>
-    <%= f.text_field :toppings %>
+   <h5> <%= f.text_area(:toppings, options = {cols: 20, rows: 20}) %> </h5>
   </div>
   <div>
     <%= f.submit "Submit" %> 
   </div>
 <% end %>
+</h3>

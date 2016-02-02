@@ -1,6 +1,10 @@
-<%= link_to "Back to all toppings", controller: 'toppings', action: 'index' %><br/>
+<%= render 'layouts/navigation_bar' %>
+<div class='container-fluid'>
 
-(<%= link_to "edit", edit_topping_path(@topping) %>, <%= link_to "delete", topping_path(@topping), method: :delete, confirm: "You sure?" %>)
+  <h1>Name: <%= @topping.name %></h1>
+  <h3>UUID: <%= @topping.uuid %></h3>
 
-<h1>Name: <%= @topping.name %></h1>
-<h3>UUID: <%= @topping.uuid %></h3>
+  <%= link_to "Back to all toppings", controller: 'toppings', action: 'index' %><br/>
+
+  (<%= link_to "edit", edit_topping_path(@topping) %>, <%= link_to "delete", topping_path(@topping), method: :delete, confirm: "You sure?" %>)
+</div>
