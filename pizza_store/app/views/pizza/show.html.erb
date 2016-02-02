@@ -1,0 +1,12 @@
+<%= link_to "Back to all pizzas", controller: 'pizza', action: 'index' %><br/>
+
+<h1>Name: <%= @pizza.name %></h1>
+<h2>Price: <%= @pizza.price %> </h2> 
+<h3>UUID: <%= @pizza.uuid %></h3>
+<h3>Toppings:
+  <% if @pizza.toppings.empty? %>
+    No Toppings.
+  <% else %>
+    <%= @pizza.toppings %>
+  <% end %>
+</h3>
