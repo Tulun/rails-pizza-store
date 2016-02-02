@@ -35,6 +35,12 @@ class PizzasController < ApplicationController
     end
   end
 
+  def destroy
+    @pizza = Pizza.find(params[:id])
+    @pizza.destroy
+    redirect_to pizzas_path, notice: "#{@pizza.name} was deleted successfully!"
+  end
+
   private
 
   def pizza_params

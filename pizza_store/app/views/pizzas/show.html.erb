@@ -1,6 +1,6 @@
 <%= link_to "Back to all pizzas", controller: 'pizzas', action: 'index' %><br/>
 
-(<%= link_to "edit", edit_pizza_path(@pizza) %>)
+(<%= link_to "edit", edit_pizza_path(@pizza) %>, <%= link_to "delete", pizza_path(@pizza), method: :delete, confirm: "You sure?" %>)
 
 <h1>Name: <%= @pizza.name %></h1>
 <h2>Price: <%= @pizza.price %> </h2> 
