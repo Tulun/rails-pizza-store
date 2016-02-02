@@ -1,3 +1,40 @@
 <%= render 'layouts/navigation_bar' %>
 
-<%= render 'form' %>
+<h3>
+<%= form_for @pizza, url: pizza_path, method: :put do |f| %>
+  <% if @pizza.errors.any? %>
+    <div>
+      <%= pluralize(@pizza.errors.count, "error") %> prevented this pizza from being submitted:
+      <ul>
+        <% @pizza.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+  <div>
+    <%= f.label :uuid %><br>
+   <h5> <%= f.text_field :uuid %> </h5> 
+  </div>
+  <div>
+    <%= f.label :name %><br>
+   <h5> <%= f.text_field :name %> </h5>
+  </div>
+  <div>
+    <%= f.label :price %><br>
+   <h5> <%= f.number_field :price, :step => '0.01' %> </h5>
+  </div>
+  <div>
+    <%= f.label :toppings %><br>
+     <h5>
+        <%= f.collection_check_boxes(:toppings, Topping.all, :uuid, :name) do |b| %>
+          <%= b.check_box %>
+          <%= b.label %>
+        <% end %>
+    </h5>
+  </div>
+  <div>
+    <%= f.submit "Submit" %> 
+  </div>
+<% end %>
+</h3>

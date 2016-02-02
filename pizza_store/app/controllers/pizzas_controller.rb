@@ -30,7 +30,7 @@ class PizzasController < ApplicationController
 
   def update
     @pizza = Pizza.find(params[:id])
-    if @Pizza.update_attributes(pizza_params)
+    if @pizza.update_attributes(pizza_params)
       redirect_to pizza_path(@pizza)
     else
       render :edit

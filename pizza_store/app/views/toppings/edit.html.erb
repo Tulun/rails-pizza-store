@@ -1,3 +1,27 @@
 <%= render 'layouts/navigation_bar' %>
 
-<%= render 'form' %>
+<h3>
+<%= form_for @topping, url: topping_path, method: :put do |f| %>
+  <% if @topping.errors.any? %>
+    <div>
+      <%= pluralize(@topping.errors.count, "error") %> prevented this topping from being submitted:
+      <ul>
+        <% @topping.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+  <div>
+    <%= f.label :uuid %><br>
+    <h5> <%= f.text_field :uuid %> </h5>
+  </div>
+  <div>
+    <%= f.label :name %><br>
+    <h5> <%= f.text_field :name %> </h5>
+  </div>
+  <div>
+    <%= f.submit "Submit" %> 
+  </div>
+<% end %>
+</h3>
